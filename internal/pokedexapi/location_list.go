@@ -17,8 +17,7 @@ func (c *Client) GetLocationPage(pageURL *string) (*LocationPage, error) {
 	res, err := c.httpClient.Get(url)
 	// return an error if the request fails
 	if err != nil {
-		log.Printf("Error fetching location list: %v", err)
-		return nil, err
+		return nil, fmt.Errorf("error fetching location list: %v", err)
 	}
 
 	defer res.Body.Close()
@@ -26,13 +25,11 @@ func (c *Client) GetLocationPage(pageURL *string) (*LocationPage, error) {
 	// read the response body
 	body, err := io.ReadAll(res.Body)
 	if err != nil {
-		log.Printf("Error reading response body: %v", err)
-		return nil, err
+		return nil, fmt.Errorf("error reading response body: %v", err)
 	}
 
 	// check for non-200 status codes
 	if res.StatusCode != http.StatusOK {
-		log.Printf("Error fetching location list: status code %d, body: %s", res.StatusCode, string(body))
 		return nil, fmt.Errorf("error fetching location list: status code %d", res.StatusCode)
 	}
 
