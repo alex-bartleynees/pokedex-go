@@ -1,9 +1,9 @@
-package main 
+package main
 
 import (
+	"fmt"
 	"github.com/alex-bartleynees/pokedex/internal/config"
 	"github.com/alex-bartleynees/pokedex/internal/pokedexapi"
-	"fmt"
 )
 
 func commandMap(cfg *config.Config) error {
@@ -15,7 +15,7 @@ func commandMapBack(cfg *config.Config) error {
 		fmt.Println("No previous page available.")
 		return nil
 	}
-	
+
 	return showLocationPage(cfg, cfg.PreviousPageURL)
 
 }
@@ -44,4 +44,3 @@ func setPageURLs(cfg *config.Config, page *pokedexapi.LocationPage) {
 	cfg.NextPageURL = page.Next
 	cfg.PreviousPageURL = page.Previous
 }
-

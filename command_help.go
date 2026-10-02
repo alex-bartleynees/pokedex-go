@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/alex-bartleynees/pokedex/internal/config"
 	"maps"
 	"slices"
-	"github.com/alex-bartleynees/pokedex/internal/config"
 )
 
 func commandHelp(cfg *config.Config) error {

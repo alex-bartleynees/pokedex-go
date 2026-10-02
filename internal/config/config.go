@@ -11,9 +11,9 @@ type CliCommand struct {
 }
 
 type Config struct {
-	Commands      map[string]CliCommand
-	PokeApiClient *pokedexapi.Client
-	NextPageURL    *string
+	Commands        map[string]CliCommand
+	PokeApiClient   *pokedexapi.Client
+	NextPageURL     *string
 	PreviousPageURL *string
 }
 

@@ -1,14 +1,14 @@
 package pokedexapi
 
 import (
-	"log"
 	"encoding/json"
-	"io"
 	"fmt"
+	"io"
+	"log"
 	"net/http"
-) 
+)
 
-func (c *Client) GetLocationPage(pageURL *string) (*LocationPage, error) { 
+func (c *Client) GetLocationPage(pageURL *string) (*LocationPage, error) {
 	url := baseURL + "/location-area"
 	if pageURL != nil {
 		url = *pageURL
@@ -43,4 +43,4 @@ func (c *Client) GetLocationPage(pageURL *string) (*LocationPage, error) {
 
 	return &locationPage, nil
 
-}	
+}

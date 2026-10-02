@@ -16,4 +16,3 @@ func NewClient(timeout time.Duration) *Client {
 		},
 	}
 }
-

@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"github.com/alex-bartleynees/pokedex/internal/config"
+	"os"
 )
 
 func commandExit(cfg *config.Config) error {

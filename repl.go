@@ -3,9 +3,9 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"github.com/alex-bartleynees/pokedex/internal/config"
 	"os"
 	"strings"
-	"github.com/alex-bartleynees/pokedex/internal/config"
 )
 
 func startRepl(cfg *config.Config) {
